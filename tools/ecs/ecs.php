@@ -21,8 +21,10 @@ return static function (ECSConfig $ecsConfig): void {
     );
 
     $ecsConfig->skip([
+        // test classes may contain badly formatted code on purpose
         $libRootPath . '/tests/Classes/*.php',
 
+        // types are sometimes ordered in non-alphabetical order on purpose
         OrderedTypesFixer::class,
         PhpdocTypesOrderFixer::class,
 
